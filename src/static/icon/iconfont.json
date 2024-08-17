@@ -1,0 +1,65 @@
+{
+  "id": "4656367",
+  "name": "autox",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "240317",
+      "name": "move",
+      "font_class": "move",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "6517471",
+      "name": "日志",
+      "font_class": "log",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "10694312",
+      "name": "编辑",
+      "font_class": "edit",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "693655",
+      "name": "操作日志",
+      "font_class": "caozuorizhi",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "1273065",
+      "name": "操作",
+      "font_class": "action",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "1305472",
+      "name": "任务",
+      "font_class": "task",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "5767874",
+      "name": "任务进程",
+      "font_class": "tasking",
+      "unicode": "ec35",
+      "unicode_decimal": 60469
+    },
+    {
+      "icon_id": "29104246",
+      "name": "任务组模板",
+      "font_class": "task-tpl",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

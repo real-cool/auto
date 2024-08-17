@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4656367 */
+  src: url('iconfont.ttf?t=1723826861867') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-move:before {
+  content: "\e6fd";
+}
+
+.icon-log:before {
+  content: "\e715";
+}
+
+.icon-edit:before {
+  content: "\e642";
+}
+
+.icon-caozuorizhi:before {
+  content: "\e668";
+}
+
+.icon-action:before {
+  content: "\e615";
+}
+
+.icon-task:before {
+  content: "\e63f";
+}
+
+.icon-tasking:before {
+  content: "\ec35";
+}
+
+.icon-task-tpl:before {
+  content: "\e60b";
+}
+
