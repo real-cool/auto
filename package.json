@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "moment": "^2.30.1",
     "tailwind-scrollbar": "^3.1.0",
     "vant": "^4.8.10",
     "vue": "^3.4.21",
@@ -25,6 +26,7 @@
     "concurrently": "^8.2.2",
     "postcss": "^8.4.41",
     "stream-buffers": "^3.0.2",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.5",
@@ -32,7 +34,6 @@
     "uuid": "^9.0.1",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6",
-    "ws": "^8.16.0",
-    "tailwind-merge": "^2.3.0"
+    "ws": "^8.16.0"
   }
 }

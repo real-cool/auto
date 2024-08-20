@@ -7,7 +7,7 @@ declare namespace floaty {
         getX(): number;
         getY(): number;
         setSize(width: number, height: number): void;
-        getWidht(): number;
+        getWidth(): number;
         getHeight(): number;
         close(): void;
         exitOnClose(): void;

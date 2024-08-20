@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4656367 */
-  src: url('iconfont.ttf?t=1723826861867') format('truetype');
+  src: url('iconfont.ttf?t=1724035913206') format('truetype');
 }
 
 .iconfont {
@@ -9,6 +9,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e60a";
 }
 
 .icon-move:before {

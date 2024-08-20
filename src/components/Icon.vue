@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import type {IconSize, IconType} from "../utils/type";
+import type {IconProps} from "../utils/type";
 import {twMerge} from "tailwind-merge";
 
-defineProps<{
-  icon: IconType;
-  size: IconSize;
-}>()
-
+defineProps<IconProps>()
 const sizeClass = {
   sa: 'text-xs w-3 h-3',
   sm: 'text-md w-4 h-4',
@@ -17,7 +13,7 @@ const sizeClass = {
 </script>
 
 <template>
-  <i :class="twMerge('iconfont', `icon-${icon}`, sizeClass[size])"></i>
+  <i :class="twMerge('iconfont flex items-center justify-center', `icon-${icon}`, sizeClass[size], wrapClass)"></i>
 </template>
 
 <style scoped>

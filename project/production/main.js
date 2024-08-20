@@ -10,6 +10,9 @@ ui.web.getSettings().setAllowFileAccessFromFileURLs(true);
 ui.web.getSettings().setAllowUniversalAccessFromFileURLs(true);
 // 加载页面
 ui.web.loadUrl("file://" + files.path("./dist/index.html"))
+/* ui.web.jsBridge.registerHandler("onLoaded", ()=>{
+    ui.web.jsBridge.callHandler("home", "home", ()=> {})
+}) */
 // 加载函数
 const LIST = require("./modules/bridge.js")
 LIST.forEach((handler) => {

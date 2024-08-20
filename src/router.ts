@@ -1,20 +1,19 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
-
-import Action from './pages/Action.vue'
-import Task from "./pages/Task.vue";
-import ActionTpl from "./pages/ActionTpl.vue";
-
+import {createRouter, createWebHashHistory} from 'vue-router'
+import TabView from "./pages/TabIndex.vue";
+import TestView from "./pages/Test.vue";
+import LogView from "./pages/Logs.vue";
+import HomeView from "./pages/Home.vue";
 
 const routes = [
-  { path: '/', redirect: '/action' },
-  { path: '/action', component: Action },
-  { path: '/task', component: Task },
-  { path: '/taskTpl', component: ActionTpl },
+  { path: '/', redirect: '/home' },
+  { path: '/home', component: HomeView },
+  { path: '/tab', component: TabView },
+  { path: '/test', component: TestView },
+  { path: '/log', component: LogView },
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHashHistory(),
   routes,
 })
-
 export default router

@@ -23,11 +23,9 @@ function tabClick(item: TabbarItem, index: number) {
 
 <template>
   <div class="flex flex-row w-full h-14 text-base bg-white shadow-lg">
-    <router-link class="h-full flex-1" :to="item.to" v-for="(item, i) in data" :key="item.name">
-      <div :key="item.name" :class="twMerge('h-full w-full flex flex-col gap-1 items-center justify-center', ai === i && 'text-primary')" @click="tabClick(item, i)">
-        <icon size="md" :icon="item.icon"/>
-        <span>{{ item.name }}</span>
-      </div>
-    </router-link>
+    <div v-for="(item, i) in data" :key="item.name" :class="twMerge('h-full flex-1 flex flex-col gap-1 items-center justify-center', ai === i && 'text-primary')" @click="tabClick(item, i)">
+      <icon size="md" :icon="item.icon"/>
+      <span>{{ item.name }}</span>
+    </div>
   </div>
 </template>
