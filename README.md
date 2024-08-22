@@ -18,34 +18,8 @@
 2. Autox.js输入电脑ip连接电脑 - 项目自动保存到手机
 3. 项目路径为 autox/build/production
 
-
-# 示例
-
-```typescript
-// autox/bridge.ts
-module.exports = [
-    {
-        name: 'getDeviceBattery',
-        callback: (data: string, cb: (data: string) => void) => {
-            console.log("received web count :" + data);
-            toast(data);
-            cb(device.getBattery().toFixed(2));
-        }
-    }
-]
-
-// vue
-$autox.callHandler("getDeviceBattery", count.value.toString(), (data: string) => {
-    battery.value = data
-});
-```
-
-
 # 参考项目
 
 * [Auto.js-VSCode-Extension](https://github.com/kkevsekk1/Auto.js-VSCode-Extension)
 
 
-# License
-
-See the LICENSE file for more details.
