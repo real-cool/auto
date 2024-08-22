@@ -17,6 +17,7 @@ export type ColorType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 
 
 export type IconType =
     ''
+    | 'empty'
     | 'close'
     | 'move'
     | 'log'
@@ -79,4 +80,49 @@ export type Logger = {
     date: Date,
     type?: ColorType,
     message: string,
+}
+export type VerifyProps = {
+    required?: boolean,
+    email?: boolean,
+    phone?: boolean,
+    idcard?: boolean,
+    maxLength?: number,
+    minLength?: number,
+    max?: number,
+    min?: number,
+    message?: ((v: string) => string) | string,
+    validator?: (v: string) => boolean
+}
+
+export type Rules = Record<string, VerifyProps>
+
+export type FormProps = {
+    rules?: Rules,
+    size?: 'sm' | 'md' | 'lg',
+    value?: Record<string, any>,
+    wrapClass?: string,
+}
+
+export type FormExpose = {
+    validate: () => boolean,
+    resetFields: () => void,
+}
+
+export type FormItemProps = {
+    wrapClass?: string,
+    mainClass?: string,
+    msgClass?: string,
+    label?: string,
+    msg?: string,
+}
+
+export type FieldProps = {
+    name?: string,
+    wrapClass?: string,
+    value?: any,
+    frontIcon?: IconProps,
+    placeholder?: string,
+    readonly?: boolean,
+    endIcon?: IconProps,
+    inputClass?: string,
 }

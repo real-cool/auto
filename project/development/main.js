@@ -20,7 +20,9 @@ ui.web.jsBridge.registerHandler("openLogger", () => {
     ui.web.jsBridge.registerHandler("LoggerShow", (data) => logger.show());
     ui.web.jsBridge.registerHandler("LoggerClear", (data) => logger.clear());
 })
-
+ui.web.jsBridge.registerHandler("toast", (data) => {
+    toast(data)
+})
 // 加载函数
 const LIST = require("./modules/bridge.js")
 LIST.forEach((handler) => ui.web.jsBridge.registerHandler(handler.name, handler.callback))

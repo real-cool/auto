@@ -68,7 +68,8 @@ ui.post(() => {
   floatui.web.jsBridge.registerHandler("onLoaded", (d, call) => {
     log(d);
     onLoaded && onLoaded();
-    log("onLoaded");
+    floatui.web.requestFocus()
+    floatui.web.setEnabled(true)
     floatui.web.jsBridge.callHandler("home", "", (p) => {
       log("homeEnter");
       log(p);
@@ -78,6 +79,9 @@ ui.post(() => {
   floatui.web.jsBridge.registerHandler("float_page_change", (d, call) => {
     floatui.title.setText(d);
   });
+  floatui.web.jsBridge.registerHandler("toast", (data) => {
+    toast(data)
+  })
   const LIST = require("./modules/yxs_bridge.js");
   LIST.forEach((handler) => {
     floatui.web.jsBridge.registerHandler(handler.name, handler.callback);

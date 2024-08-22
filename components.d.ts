@@ -8,13 +8,16 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/Button.vue')['default']
+    Field: typeof import('./src/components/form/Field.vue')['default']
+    Form: typeof import('./src/components/form/Form.vue')['default']
+    FormItem: typeof import('./src/components/form/FormItem.vue')['default']
     Icon: typeof import('./src/components/Icon.vue')['default']
     Lister: typeof import('./src/components/Lister.vue')['default']
     Popper: typeof import('./src/components/Popper.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Selector: typeof import('./src/components/form/Selector.vue')['default']
     Tabbar: typeof import('./src/components/Tabbar.vue')['default']
-    VanField: typeof import('vant/es')['Field']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
   }

@@ -35,7 +35,7 @@ ui.post(() => {
     floatui.hideImg.click(() => {
         hide()
     })
-
+    //log(Object.keys(floatui.web.getSettings()))
     floatui.web.loadUrl("http://172.24.126.252:5173");
     floatui.drag.setOnTouchListener(function (view, event) {
         switch (event.getAction()) {
@@ -59,6 +59,8 @@ ui.post(() => {
     floatui.web.jsBridge.registerHandler("onLoaded", (d, call) => {
         log(d)
         onLoaded && onLoaded()
+        floatui.web.requestFocus()
+        floatui.web.setEnabled(true)
         log("onLoaded")
         floatui.web.jsBridge.callHandler("home", "", (p) => {
             log("homeEnter")
@@ -71,6 +73,9 @@ ui.post(() => {
     })
     floatui.web.jsBridge.registerHandler("clear_log", (d, call) => {
         clear && clear()
+    })
+    floatui.web.jsBridge.registerHandler("toast", (data) => {
+        toast(data)
     })
     const LIST = require("./modules/yxs_bridge.js")
     LIST.forEach((handler) => {
