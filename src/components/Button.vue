@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import {ButtonProps} from "../utils/type";
 import {twMerge} from "tailwind-merge";
+import Icon from "./Icon.vue";
 
 defineProps<ButtonProps>()
 const emits = defineEmits(['click'])
 
 const sizeClass = {
-  sm: 'px-1.5 py-0.5 text-sm',
-  base: 'px-3 py-1 ',
-  md: 'px-4 py-1 text-md',
+  sm: 'px-1 text-sm w-14',
+  base: 'px-1.5 py-1 text-base w-16',
+  md: 'px-2 py-1 text-md w-18',
 }
 
 const colorClazz = {
@@ -23,9 +24,10 @@ const colorClazz = {
 </script>
 
 <template>
-  <span :class="twMerge('px-4 py-1 rounded-sm hover:bg-opacity-80 m-1', colorClazz[type || 'primary'], sizeClass[size || 'base'], wrapClass)" @click="emits('click')">
+  <div :class="twMerge('flex flex-row items-center text-nowrap whitespace-nowrap gap-0.5 p-1 justify-center rounded-sm active:bg-opacity-80 m-0.5 overflow-hidden', colorClazz[type || 'primary'], sizeClass[size || 'base'], wrapClass)" @click="emits('click')">
+    <Icon v-if="icon" :icon="icon.icon" :size="icon.size" :wrap-class="icon.wrapClass"/>
     {{ text }}
-  </span>
+  </div>
 </template>
 
 <style scoped>

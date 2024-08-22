@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import TabIndex from "./TabIndex.vue";
-import Logs from "./Logs.vue";
-import {ref} from "vue";
+import Float from "./Float.vue";
+import {shallowRef} from "vue";
 
-const home = ref(TabIndex)
+const home = shallowRef(TabIndex)
 $autox.callHandler('onLoaded', "loaded", () => {
 })
 $autox.registerHandler('home', (data: string, call:(p?: string)=> void) => {
-  if (data !== 'home') home.value = Logs
+  if (data !== 'home') home.value = Float
+  console.log("home", data)
   call("路由回调")
 })
+
 </script>
 
 <template>

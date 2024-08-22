@@ -1,9 +1,10 @@
 // axp-logger文档 http://docs.axp.auair.cn
-let logger = require('./logger.js')
+const logger = require('./logger.js')
 
 logger.onLoaded(()=> {
     log('加载日志悬浮框开始运行')
-    threads.start(main)
+    log(Object.keys(threads).join(","))
+    //threads.runAsync(main)
 })
 
 const main = () => {

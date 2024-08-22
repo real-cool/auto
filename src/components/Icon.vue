@@ -13,7 +13,7 @@ const sizeClass = {
 </script>
 
 <template>
-  <i :class="twMerge('iconfont flex items-center justify-center', `icon-${icon}`, sizeClass[size], wrapClass)"></i>
+  <i :class="twMerge('iconfont flex items-center justify-center', `icon-${icon}`, sizeClass[size || 'sa'], wrapClass)"></i>
 </template>
 
 <style scoped>

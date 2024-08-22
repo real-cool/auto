@@ -35,11 +35,9 @@ export default {
       },
       fontSize: {
         ss: '0.5rem',
-        sa: '0.6rem',
-        sb: '0.7rem',
-        sm: '0.75rem',
-        base: '0.875rem',
-        md: '1rem',
+        sm: '0.6rem',
+        base: '0.75rem',
+        md: '0.9rem',
       },
       colors: {
         default: {

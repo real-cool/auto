@@ -26,11 +26,24 @@ export type IconType =
     | 'task'
     | 'tasking'
     | 'task-tpl'
+    | 'setting'
+    | 'sync'
+    | 'check'
+    | 'plus'
+    | 'delete'
+    | 'down'
+    | 'up'
+    | 'right'
+    | 'left'
+    | 'warning'
+    | 'f-success'
+    | 'search'
+    | 'f-warning'
 export type IconSize = 'sa' | 'sm' | 'base' | 'md' | 'lg'
 
 export type IconProps = {
     icon: IconType;
-    size: IconSize;
+    size?: IconSize;
     wrapClass?: string;
 }
 
@@ -49,6 +62,7 @@ export type ButtonSize = 'sm' | 'base' | 'md'
 
 export type ButtonProps = {
     wrapClass?: string,
+    icon?: IconProps,
     text: string,
     type?: ColorType,
     size?: ButtonSize
@@ -61,7 +75,8 @@ export type PopperProps = {
 }
 
 export type Logger = {
-    date: string,
+    id: number,
+    date: Date,
     type?: ColorType,
     message: string,
 }

@@ -1,9 +1,9 @@
-import ScriptApi from './service/script';
+import YXSApi from './service/yxs';
 
 const modules = [
     // 导入模块放到这里
-    ScriptApi
-] as { [key: string]: Function }[]
+    YXSApi
+] as { [key: string]: (_: string) => Promise<string> }[]
 
 const apis = [];
 for (const module of modules) {
@@ -11,7 +11,9 @@ for (const module of modules) {
         return {
             name: key,
             callback: (params: string, cb: (data: string) => void) => {
-                cb(module[key](params));
+                module[key](params).then(res=> {
+                    cb(res);
+                })
             }
         }
     }))

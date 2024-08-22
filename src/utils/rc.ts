@@ -58,3 +58,4 @@ export function tpl2res<T>(tpl: string, data: Record<string, any> | Record<strin
     }
     return value as T
 }
+

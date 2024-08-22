@@ -10,7 +10,7 @@
     "target": "ES5",
     "module": "CommonJS",
     "esModuleInterop": true,
-    "allowJs": false,
+    "allowJs": true,
     "checkJs": false,
     "noEmit": false,
     "importHelpers": false,

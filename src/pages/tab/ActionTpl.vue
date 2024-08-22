@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import {success_log} from "../../utils/global.ts";
 
-success_log('进入操作模板页面')
 </script>
 
 <template>
-
+<div>操作模板页面</div>
 </template>
 
 <style scoped>

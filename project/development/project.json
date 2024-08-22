@@ -3,5 +3,16 @@
     "packageName": "com.realcool.auto",
     "main": "main.js",
     "versionName": "0.0.1",
+    "assets": [
+        {
+            "form": "file:///android_asset/mlkit-google-ocr-models",
+            "to": "/mlkit-google-ocr-models"
+        }
+    ],
+    "libs": [
+        "libmlkit_google_ocr_pipeline.so",
+        "libjackpal-androidterm5.so",
+        "libjackpal-termexec2.so"
+    ],
     "ignore": []
 }
