@@ -12,9 +12,14 @@ const formClass = {
 }
 
 const fields: Ref<Record<string, any>[]> = ref([])
+const _value = ref(props.value || {})
 const updateValue = (v: Record<string, any>) => {
-  emits('update:value', v)
-  emits('change', v)
+  const new_val = {..._value.value, ...v}
+  if (_value.value[Object.keys(v)[0]]) {
+    emits('update:value', new_val)
+    emits('change', new_val)
+  }
+  _value.value = new_val
 }
 
 const addFieldCb = (field: Record<string, any>) => {

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Button from "../../components/Button.vue";
 import {clear_logger, open_logger, show_logger} from "../../utils/app_global.ts";
-import Field from "../../components/form/Field.vue";
 import Form from "../../components/form/Form.vue";
 import FormItem from "../../components/form/FormItem.vue";
 import {showToast} from "../../utils/global.ts";
@@ -22,7 +21,10 @@ function logger() {
   show ? show_logger() : open_logger()
   show = true
 }
-
+const model = ref()
+function change() {
+  console.log(model.value)
+}
 </script>
 <template>
   <div class="flex flex-row">
@@ -30,9 +32,15 @@ function logger() {
     <Button text="清空日志" @click="clear_logger"/>
     <Button text="悬浮框" @click="logger"/>
   </div>
-  <Form>
+  <Form v-model:value="model" @change="change">
     <FormItem label="测试">
-      <selector :data="test_data" value="2"/>
+      <selector name="test" :data="test_data" value="2"/>
+    </FormItem>
+    <FormItem label="测试">
+      <selector name="test1" :data="test_data" value="2"/>
+    </FormItem>
+    <FormItem label="测试">
+      <selector name="test2" :data="test_data" value="2"/>
     </FormItem>
   </Form>
 

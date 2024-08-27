@@ -45,7 +45,7 @@ function clear() {
     </template>
     <template v-slot:target>
       <field readonly :name="name" :placeholder="placeholder" :wrap-class="wrapClass" :input-class="inputClass"
-             v-model:value="label" :front-icon="frontIcon" :end-icon="endIcon" @clear="clear"/>
+             v-model:value="label" :front-icon="frontIcon" :end-icon="endIcon || {icon: 'right', size: 'sa'}" @clear="clear"/>
     </template>
   </popper>
 
