@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="h-screen overflow-auto relative">
+  <div id="app-frame" class="h-screen overflow-auto relative">
     <RouterView/>
     <div id="outer"></div>
   </div>

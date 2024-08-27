@@ -21,7 +21,7 @@ function swipeChange(e) {
 </script>
 
 <template>
-  <div class="absolute w-full top-0 h-8 z-10 shadow flex items-center justify-center bg-primary text-white">{{tabs[active].name}}</div>
+  <div class="fixed w-full top-0 h-8 z-10 shadow flex items-center justify-center bg-primary text-white">{{tabs[active].name}}</div>
   <div class="h-8"></div>
   <van-swipe ref="swipe" @change="swipeChange" :show-indicators="false" >
     <van-swipe-item v-for="(item, index) in tabs" :key="index">
@@ -32,7 +32,7 @@ function swipeChange(e) {
   </van-swipe>
 
   <div class="h-14"></div>
-  <div class="absolute bottom-0 w-full">
+  <div class="fixed bottom-0 w-full">
     <tabbar :data="tabs" v-model:active="active" @change="change"/>
   </div>
 </template>

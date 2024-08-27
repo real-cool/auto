@@ -6,9 +6,18 @@ import Form from "../../components/form/Form.vue";
 import FormItem from "../../components/form/FormItem.vue";
 import {showToast} from "../../utils/global.ts";
 import Selector from "../../components/form/Selector.vue";
+import {ref} from "vue";
 
 let show = false
 
+const test_data = ref([
+  {id: 1, name: '报告1'},
+  {id: 2, name: '报告2'},
+  {id: 3, name: '报告3'},
+  {id: 4, name: '报告4'},
+  {id: 5, name: '报告5'},
+  {id: 6, name: '报告6'},
+])
 function logger() {
   show ? show_logger() : open_logger()
   show = true
@@ -23,10 +32,7 @@ function logger() {
   </div>
   <Form>
     <FormItem label="测试">
-      <selector/>
-    </FormItem>
-    <FormItem label="测试">
-      <Field/>
+      <selector :data="test_data" value="2"/>
     </FormItem>
   </Form>
 

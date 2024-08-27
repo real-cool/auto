@@ -73,7 +73,8 @@ export type PopperProps = {
     show?: boolean,
     teleportTo?: string,
     activeType?: 'click' | 'hover',
-    slotWidth?: boolean  //是否宽度为 slot的组件宽度
+    slotWidth?: boolean,  //是否宽度为 slot的组件宽度
+    offsetY?: number | string
 }
 
 export type Logger = {
@@ -133,4 +134,16 @@ export type TabInnerPageProps = {
     title?: string,
     tabs: TabbarItem[],
     current?: number,
+}
+
+export type SelectorProps = {
+    data?: Record<string, any>[],
+    tpl?: [string, string], // id, name
+    endIcon?: IconProps,
+    inputClass?: string,
+    placeholder?: string,
+    wrapClass?: string,
+    name?: string,
+    value?: any,
+    frontIcon?: IconProps,
 }
