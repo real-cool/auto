@@ -57,7 +57,7 @@ provide('form-item-value-cb', fieldValueCb)
 </script>
 
 <template>
-  <div :class="twMerge('flex box-border gap-1 flex-col', wrapClass)">
+  <div :class="twMerge('flex box-border gap-1 flex-col py-2', wrapClass)">
     <div v-if="label"
          :class="twMerge('text-base font-bold  px-2 flex items-center', theme == 'dark'? 'text-white':'text-default-500')">
       {{ label }}

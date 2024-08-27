@@ -24,7 +24,7 @@ function clear() {
 </script>
 
 <template>
-  <div :class="twMerge('relative flex box-border flex-row h-7 items-center rounded-md gap-1', errorClass, wrapClass)">
+  <div :class="twMerge('relative flex box-border flex-row h-7 items-center rounded-md gap-1 shadow-sm', errorClass, wrapClass)">
     <Icon v-if="frontIcon" :icon="frontIcon.icon" :size="frontIcon.size" :wrap-class="frontIcon.wrapClass"/>
     <input :value="val" :name="name" :placeholder="placeholder" :readonly="readonly"
            @input="input"

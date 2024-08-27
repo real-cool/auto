@@ -41,7 +41,7 @@ defineExpose<FormExpose>({
 </script>
 
 <template>
-  <div :class="twMerge('p-2', theme === 'dark' ? 'bg-default-500': '')">
+  <div :class="twMerge('p-2 ', theme === 'dark' ? 'bg-default-500': '')">
     <form @submit.prevent
           :class="twMerge('grid rounded-sm box-border gap-x-12 gap-y-2 my-2 overflow-hidden', formClass[size || 'sm'],wrapClass)">
       <slot/>

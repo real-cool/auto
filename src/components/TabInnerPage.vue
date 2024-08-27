@@ -9,7 +9,6 @@ const active = ref(props.current || 0)
 const swipe = ref()
 function change(){
   swipe.value.swipeTo(active.value)
-  console.log(swipe.value, active.value)
   emits('update:active', active.value)
   emits('change', active.value)
 }

@@ -3,8 +3,15 @@
 </script>
 
 <template>
-  <div class="h-screen overflow-auto">
+  <div class="h-screen overflow-auto relative">
     <RouterView/>
     <div id="outer"></div>
   </div>
 </template>
+
+<style scoped>
+#outer {
+  position: absolute;
+  top: 0;
+}
+</style>

@@ -20,7 +20,7 @@ function calculatePosition() {
   const {clientWidth, clientHeight, scrollTop, scrollLeft} = document.body
   const boolRight = target.value.clientWidth + refRect.left < clientWidth
   const boolBottom = target.value.clientHeight + 10 + refRect.bottom < clientHeight
-  inset.value = `inset: ${boolBottom ? (refRect.bottom + 10 + scrollTop) : (refRect.top - 10 - target.value.clientHeight + scrollTop)}px auto auto ${boolRight ? (refRect.left + scrollLeft) : (refRect.right - target.value.clientWidth + scrollLeft)}px;`
+  inset.value = `inset: ${boolBottom ? (refRect.bottom + 5 + scrollTop) : (refRect.top - 5 - target.value.clientHeight + scrollTop)}px auto auto ${boolRight ? (refRect.left + scrollLeft) : (refRect.right - target.value.clientWidth + scrollLeft)}px;`
 }
 
 function showPopper(e: Event) {
@@ -32,12 +32,12 @@ function showPopper(e: Event) {
 </script>
 
 <template>
-  <div ref="ref_dom" @click="showPopper">
+  <div ref="ref_dom" @click.prevent="showPopper">
     <slot name="target"/>
   </div>
   <teleport :to="teleportTo || '#outer'">
     <transition name="dropdown">
-      <div ref="target" v-show="_show" class="start overflow-hidden absolute" :style="`${slotWidth && `width: ${refWidth}px;${inset}`}`">
+      <div ref="target" v-show="_show" class="start overflow-hidden absolute shadow-md" :style="`${slotWidth && `width: ${refWidth}px;${inset}`}`">
         <slot/>
       </div>
     </transition>
@@ -47,7 +47,6 @@ function showPopper(e: Event) {
 <style scoped>
 .start {
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
   padding: 10px;
   transform-origin: top;
   margin-top: 10px;

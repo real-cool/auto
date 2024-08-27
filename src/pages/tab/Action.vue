@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import Popper from "../../components/Popper.vue";
 import Button from "../../components/Button.vue";
-import {clear_logger, exec_script, open_logger, show_logger, success_log} from "../../utils/app_global.ts";
+import {clear_logger, open_logger, show_logger} from "../../utils/app_global.ts";
 import Field from "../../components/form/Field.vue";
 import Form from "../../components/form/Form.vue";
 import FormItem from "../../components/form/FormItem.vue";
 import {showToast} from "../../utils/global.ts";
+import Selector from "../../components/form/Selector.vue";
 
 let show = false
 
@@ -14,13 +14,6 @@ function logger() {
   show = true
 }
 
-/*function ocrTest() {
-  exec_script('ocr_demo')
-}
-
-function addLog() {
-  success_log('添加一条成功日志')
-}*/
 </script>
 <template>
   <div class="flex flex-row">
@@ -30,7 +23,7 @@ function addLog() {
   </div>
   <Form>
     <FormItem label="测试">
-      <Field/>
+      <selector/>
     </FormItem>
     <FormItem label="测试">
       <Field/>
