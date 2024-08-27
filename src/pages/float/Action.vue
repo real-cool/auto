@@ -30,8 +30,8 @@ import Field from "../../components/form/Field.vue";
     <Button size="sm" text="点击100,200" @click="click_point"/>
     <Button size="sm" text="截图ocr测试" @click="ocr_test"/>
   </div>-->
-  <div class="flex flex-col w-full px-2 h-screen bg-gray-100">
-    <Form>
+  <div class="h-screen bg-default-500">
+    <Form theme="dark">
       <FormItem label="测试">
         <Field/>
       </FormItem>

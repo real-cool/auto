@@ -28,16 +28,14 @@ function addLog() {
     <Button text="清空日志" @click="clear_logger"/>
     <Button text="悬浮框" @click="logger"/>
   </div>
-  <div class="px-2">
-    <Form>
-      <FormItem label="测试">
-        <Field/>
-      </FormItem>
-      <FormItem label="测试">
-        <Field/>
-      </FormItem>
-    </Form>
-  </div>
+  <Form>
+    <FormItem label="测试">
+      <Field/>
+    </FormItem>
+    <FormItem label="测试">
+      <Field/>
+    </FormItem>
+  </Form>
 
   <!--  <div class="h-2"/>
     <Button @click="logger" text="打开悬浮窗"/>

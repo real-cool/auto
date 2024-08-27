@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {PopperProps} from '../utils/type';
-import {ref, watch} from "vue";
+import {Ref, ref, watch} from "vue";
 
 const props = defineProps<PopperProps>()
 const emits = defineEmits(['update:show'])
@@ -11,17 +11,16 @@ const ref_dom = ref()
 watch(() => props.show, v => _show.value = v)
 watch(() => _show, v => emits('update:show', v))
 const refWidth = ref(0)
+//@ts-ignore
+const target: Ref<HTMLElement> = ref()
+const inset = ref()
 function calculatePosition() {
-  const isTab = document.getElementById('tabs-container')
   const refRect = ref_dom.value.getBoundingClientRect()
   refWidth.value = refRect.width
-  if (isTab) {
-
-  } else {
-
-  }
   const {clientWidth, clientHeight, scrollTop, scrollLeft} = document.body
-  console.log(clientWidth, clientHeight, scrollTop, scrollLeft)
+  const boolRight = target.value.clientWidth + refRect.left < clientWidth
+  const boolBottom = target.value.clientHeight + 10 + refRect.bottom < clientHeight
+  inset.value = `inset: ${boolBottom ? (refRect.bottom + 10 + scrollTop) : (refRect.top - 10 - target.value.clientHeight + scrollTop)}px auto auto ${boolRight ? (refRect.left + scrollLeft) : (refRect.right - target.value.clientWidth + scrollLeft)}px;`
 }
 
 function showPopper(e: Event) {
@@ -36,9 +35,9 @@ function showPopper(e: Event) {
   <div ref="ref_dom" @click="showPopper">
     <slot name="target"/>
   </div>
-  <teleport to="#outer">
+  <teleport :to="teleportTo || '#outer'">
     <transition name="dropdown">
-      <div v-if="_show" class="start overflow-hidden absolute top-0 left-0" :style="`${slotWidth && `width: ${refWidth}px`}`">
+      <div ref="target" v-show="_show" class="start overflow-hidden absolute" :style="`${slotWidth && `width: ${refWidth}px;${inset}`}`">
         <slot/>
       </div>
     </transition>

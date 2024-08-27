@@ -4,10 +4,13 @@ import {inject, provide, ref, Ref} from "vue";
 import {verify} from "../../utils/verify.ts";
 import {twMerge} from "tailwind-merge";
 
+
 defineProps<FormItemProps>();
 const emits = defineEmits(['update:msg', 'change'])
 const field = inject('form-field')
 const rules = inject('form-rules') as Rules
+const theme = inject('form-theme')
+
 const updateValue = inject('form-update-value')
 const itemFields: Ref<Record<string, any>> = ref({})
 let validateCb: Record<string, (res: boolean) => void> = {}
@@ -55,7 +58,10 @@ provide('form-item-value-cb', fieldValueCb)
 
 <template>
   <div :class="twMerge('flex box-border gap-1 flex-col', wrapClass)">
-    <div v-if="label" :class="twMerge('text-base font-bold text-default-500 px-2 flex items-center')">{{ label }}</div>
+    <div v-if="label"
+         :class="twMerge('text-base font-bold  px-2 flex items-center', theme == 'dark'? 'text-white':'text-default-500')">
+      {{ label }}
+    </div>
     <div :class="twMerge('relative box-border flex flex-col flex-1', mainClass)">
       <slot/>
       <div :class="twMerge('w-full text-sm pl-2 text-danger-700', msgClass)">{{ message || '' }}</div>

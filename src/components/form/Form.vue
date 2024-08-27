@@ -23,6 +23,7 @@ const addFieldCb = (field: Record<string, any>) => {
 provide('form-rules', props.rules)
 provide('form-field', addFieldCb)
 provide('form-update-value', updateValue)
+provide('form-theme', props.theme)
 defineExpose<FormExpose>({
   resetFields() {
     fields.value.forEach((f) => {
@@ -40,9 +41,12 @@ defineExpose<FormExpose>({
 </script>
 
 <template>
-<form @submit.prevent :class="twMerge('grid rounded-sm box-border gap-x-12 gap-y-2 my-2 overflow-hidden', formClass[size || 'sm'],wrapClass)">
-  <slot/>
-</form>
+  <div :class="twMerge('p-2', theme === 'dark' ? 'bg-default-500': '')">
+    <form @submit.prevent
+          :class="twMerge('grid rounded-sm box-border gap-x-12 gap-y-2 my-2 overflow-hidden', formClass[size || 'sm'],wrapClass)">
+      <slot/>
+    </form>
+  </div>
 </template>
 
 <style scoped>

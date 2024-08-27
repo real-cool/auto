@@ -18,6 +18,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Selector: typeof import('./src/components/form/Selector.vue')['default']
     Tabbar: typeof import('./src/components/Tabbar.vue')['default']
+    TabInnerPage: typeof import('./src/components/TabInnerPage.vue')['default']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
   }

@@ -26,7 +26,7 @@ $autox.registerHandler("clear_log", () => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col bg-black h-full w-full min-h-screen box-border overflow-auto">
+  <div class="flex-1 flex flex-col bg-default-500 h-full w-full min-h-screen box-border overflow-auto">
     <div v-for="item in loggerData" :key="item.id"
          :class="twMerge('box-border w-screen flex flex-col p-0.5 gap-0.5 log-item-border', colorClass[item.type || 'default'])">
       <div class="text-sm">{{ moment(item.date).format("YYYY-MM-DD HH:mm:ss") }}</div>

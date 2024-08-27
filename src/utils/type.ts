@@ -71,6 +71,7 @@ export type ButtonProps = {
 
 export type PopperProps = {
     show?: boolean,
+    teleportTo?: string,
     activeType?: 'click' | 'hover',
     slotWidth?: boolean  //是否宽度为 slot的组件宽度
 }
@@ -101,6 +102,7 @@ export type FormProps = {
     size?: 'sm' | 'md' | 'lg',
     value?: Record<string, any>,
     wrapClass?: string,
+    theme?: 'light' | 'dark',
 }
 
 export type FormExpose = {
@@ -125,4 +127,10 @@ export type FieldProps = {
     readonly?: boolean,
     endIcon?: IconProps,
     inputClass?: string,
+}
+
+export type TabInnerPageProps = {
+    title?: string,
+    tabs: TabbarItem[],
+    current?: number,
 }
