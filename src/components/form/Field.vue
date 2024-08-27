@@ -13,7 +13,7 @@ const form_item_init_cb = inject('form-item-init-cb')
 const form_item_value_cb = inject('form-item-value-cb')
 
 const resetCb = function () {
-  val.value = null
+  val.value = undefined
   emits('update:value', val.value)
   emits('clear', val.value)
   emits('change', val.value)
@@ -41,7 +41,7 @@ function input(e: any) {
 }
 
 function clear() {
-  val.value = ''
+  val.value = undefined
   emits('update:value', val.value)
   emits('clear')
   emits('change', val.value)
